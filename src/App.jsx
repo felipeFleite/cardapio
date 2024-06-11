@@ -35,7 +35,15 @@ export default function App() {
     return (
         <div className="bloco-principal">
             <div className="bloco-produtos">
-              
+              {
+                listaProdutos.map((produto)=> 
+                <div key={produto.id}>
+                    <img src = {produto.image} alt={produto.item}/>
+                    <p>{produto.item}</p>
+                    <p>{produto.preco}</p>
+                </div>
+                )
+              }
             </div>
             <div className="bloco-pedidos">
                 
