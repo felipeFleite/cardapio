@@ -35,7 +35,10 @@ export default function App() {
     const adicionarPedido = (item) => {
         setlistaPedidos([...listaPedidos, item])
     }
-
+    const removerPedido = (id) => {
+        let listaX = listaPedidos.filter((produto)=> produto.id !== id)
+        setlistaPedidos(listaX)
+    }
     return (
         <div className="bloco-principal">
             <div className="bloco-produtos">
@@ -51,7 +54,22 @@ export default function App() {
               }
             </div>
             <div className="bloco-pedidos">
-                
+                <p>Meus Pedidos</p>
+                {listaPedidos.map((produto)=> 
+                <table key={produto.id}>
+                <td>
+                    <td>
+                    {produto.item}
+                    </td>
+                    <td>
+                    {produto.preco}
+                    </td>
+                    <td>
+                    <button onClick={removerPedidos}>X</button>
+                    </td>
+                </td>
+                </table>       
+            )}
             </div>
         </div>
     );
