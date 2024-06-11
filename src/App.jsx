@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../src/globals.css";
 
 export default function App() {
 
@@ -29,8 +30,11 @@ export default function App() {
         },
     ]);
 
-
+    const [listaPedidos, setlistaPedidos] = useState([])
     
+    const adicionarPedido = (item) => {
+        setlistaPedidos([...listaPedidos, item])
+    }
 
     return (
         <div className="bloco-principal">
@@ -41,6 +45,7 @@ export default function App() {
                     <img src = {produto.image} alt={produto.item}/>
                     <p>{produto.item}</p>
                     <p>{produto.preco}</p>
+                    <button onClick={()=> adicionarPedido(produto)}>ADICIONAR</button>
                 </div>
                 )
               }
