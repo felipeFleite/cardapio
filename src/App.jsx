@@ -57,7 +57,7 @@ export default function App() {
                 <p>Meus Pedidos</p>
                 {listaPedidos.map((produto)=> 
                 <table key={produto.id}>
-                <td>
+                <tr>
                     <td>
                     {produto.item}
                     </td>
@@ -65,9 +65,9 @@ export default function App() {
                     {produto.preco}
                     </td>
                     <td>
-                    <button onClick={removerPedidos}>X</button>
+                    <button onClick={()=> removerPedido(produto.id)}>X</button>
                     </td>
-                </td>
+                </tr>
                 </table>       
             )}
             </div>
