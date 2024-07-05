@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../src/globals.css";
-
+import 'react-toastify/dist/ReactToastify.css'
+import {ToastContainer, toast} from "react-toastify"
 export default function App() {
 
     const [listaProdutos, setProdutos] = useState([
