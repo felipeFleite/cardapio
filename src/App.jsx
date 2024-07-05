@@ -45,6 +45,7 @@ export default function App() {
                     return produto
                 }
                 else{
+                    toast(`Você removeu ${produto.item} 😔`)
                     removeu = true
                     return null
                 }
