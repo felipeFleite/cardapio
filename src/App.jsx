@@ -34,6 +34,7 @@ export default function App() {
     const [listaPedidos, setlistaPedidos] = useState([])
     
     const adicionarPedido = (item) => {
+        toast("Produto adicionado😊")
         setlistaPedidos([...listaPedidos, item])
     }
     const removerPedido = (id) => {
