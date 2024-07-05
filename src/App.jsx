@@ -36,7 +36,20 @@ export default function App() {
         setlistaPedidos([...listaPedidos, item])
     }
     const removerPedido = (id) => {
-        let listaX = listaPedidos.filter((produto)=> produto.id !== id)
+        let removeu = false
+        let listaX = listaPedidos.filter((produto)=> {
+            if(removeu == false){
+                if(produto.id !== id) {
+                    return produto
+                }
+                else{
+                    removeu = true
+                    return null
+                }
+            }else{
+                return produto
+            }
+        })
         setlistaPedidos(listaX)
     }
     return (
